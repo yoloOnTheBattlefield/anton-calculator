@@ -27,6 +27,30 @@ const addNumberToScreen = (e) => {
   resultDiv.innerHTML = currentValue;
 };
 
+const operationToDo = (e) => {
+  //Clearing the resultDiv for the next input
+  resultDiv.innerHTML = '';
+  
+  /*Checking if there's a previous value stored, if so, it calls the operate() function below (it
+  also does the operation between both numbers and displays the result straight away on the
+  screen on top together with the new operand selected), if there isn't a previous value stored,
+  the number on the screen + the operand clicked will be set as the new previousValue, the value
+  of the operation variable would be set to the button's clicked innerHTML and the currentValue
+  set to an empty string (this way the next number input gets displayed in a clear screen)*/
+  if(previousValue) {
+    operate();
+    prevDiv.innerHTML = resultDiv.innerHTML + ' ' + e.target.innerHTML;
+    previousValue = prevDiv.innerHTML;
+    currentValue = '';
+    resultDiv.innerHTML = '';
+  } else {
+    if(currentValue === '') return;
+    operation = e.target.innerHTML;
+    previousValue = currentValue + ' ' + operation;
+    currentValue = '';
+    prevDiv.innerHTML = previousValue;
+  } 
+};
 
 
 const operate = () => {
