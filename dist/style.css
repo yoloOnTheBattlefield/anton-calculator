@@ -1,0 +1,37 @@
+.container {
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+#result,
+#prev {
+  height: 40px;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  text-align: right;
+  font-size: 25px;
+}
+
+button {
+  width: 60px;
+  height: 40px;
+  margin: 1px;
+  font-weight: 600
+}
+
+button:hover {
+  background-color: #d3d3d3;
+  border: none;
+  border-radius: 2px;
+}
+
+#equals,
+#convert {
+  width: 100%;
+}
